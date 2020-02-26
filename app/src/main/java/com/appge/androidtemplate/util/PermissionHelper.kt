@@ -54,7 +54,7 @@ fun Context.checkPermissions(requestCode: Int) = PermissionHelper.checkPermissio
 fun Context.onRequestPermissionResult(requestCode: Int, funcAllowed: () -> Unit, funcNotAllowed: () -> Unit = {}) =
     PermissionHelper.onRequestPermissionResult(this, requestCode, funcAllowed, funcNotAllowed)
 
-fun Activity.checkPermissions(requestCode: Int, funcAllowed: () -> Unit) {
+fun Activity.checkPermissionsAndDoFunctionOrRequest(requestCode: Int, funcAllowed: () -> Unit) {
     if (this.checkPermissions(requestCode))
         funcAllowed.invoke()
     else

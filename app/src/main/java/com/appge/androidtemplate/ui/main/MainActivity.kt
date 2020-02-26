@@ -5,7 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.appge.androidtemplate.R
 import com.appge.androidtemplate.util.PermissionHelper
-import com.appge.androidtemplate.util.checkPermissions
+import com.appge.androidtemplate.util.checkPermissionsAndDoFunctionOrRequest
 import com.appge.androidtemplate.util.onRequestPermissionResult
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkPermissionAndStartCamera() {
-        checkPermissions(PermissionHelper.PERMISSIONS_CAMERA) {
+        checkPermissionsAndDoFunctionOrRequest(PermissionHelper.PERMISSIONS_CAMERA) {
             startCamera()
         }
     }
@@ -52,10 +52,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        onRequestPermissionResult(PermissionHelper.PERMISSIONS_CAMERA, {
-            startCamera()
-        }) {
-            showPermissionDeniedMessage()
+        when (requestCode) {
+            PermissionHelper.PERMISSIONS_CAMERA ->
+                onRequestPermissionResult(PermissionHelper.PERMISSIONS_CAMERA, {
+                    startCamera()
+                }) {
+                    showPermissionDeniedMessage()
+                }
         }
     }
 
