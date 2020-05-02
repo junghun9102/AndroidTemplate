@@ -11,9 +11,18 @@
         android:id="@+id/btn_main_toast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TOAST"
+        android:text="Toast"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_main_alert_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AlertDialog"
+        app:layout_constraintTop_toBottomOf="@+id/btn_main_toast"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
