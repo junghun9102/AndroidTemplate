@@ -1,4 +1,4 @@
-package com.appge.androidtemplate.ui.component
+package com.appge.androidtemplate.component
 
 import android.view.View
 

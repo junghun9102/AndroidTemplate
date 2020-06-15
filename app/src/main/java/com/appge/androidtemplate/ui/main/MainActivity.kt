@@ -2,7 +2,7 @@ package com.appge.androidtemplate.ui.main
 
 import android.os.Bundle
 import com.appge.androidtemplate.R
-import com.appge.androidtemplate.ui.component.BaseActivity
+import com.appge.androidtemplate.component.BaseActivity
 import com.appge.androidtemplate.ui.game.GameActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
