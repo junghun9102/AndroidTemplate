@@ -1,7 +1,8 @@
-package com.appge.androidtemplate
+package com.appge.androidtemplate.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.appge.androidtemplate.R
 
 class MainActivity : AppCompatActivity() {
 
